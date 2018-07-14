@@ -1,0 +1,131 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script:700);
+
+$highlight: #991A1E;
+
+//allows containers to be re-sized based on where they're situated
+@media (min-width: 500px) {
+    .container{
+        max-width: 90%;
+    }
+}
+
+h1{
+  padding-top: 20px;
+	padding-bottom: 35px;
+}
+
+p{
+  color: #000;
+  font-size: 16px;
+}
+
+b{
+  color: $highlight;
+}
+
+i{
+  padding-bottom: 40px;
+}
+
+.container{
+  border-radius: 10px;
+  border-top-style: solid;
+  border-top-width: 15px;
+  border-top-color: #ffc526;
+  padding-bottom: 20px;
+  margin-top: 15px;
+  background-color: #fff;
+}
+
+.wrapper{
+  margin-right: 100px;
+  margin-left: 100px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.container, .wrapper{
+	text-align: left;
+	font-family: 'Raleway', sans-serif;
+}
+
+.container, #donate{
+  color: $highlight;
+  opacity: 0.8;
+}
+
+.slide{
+  color: #fff;
+}
+
+.section, .slide{
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.c_wrapper{
+  background-color: #000;
+  opacity: 0.7;
+  margin-right: 100px;
+  margin-left: 100px;
+  padding-top: 20px;
+}
+
+.row{
+  margin: 0 !important;
+}
+
+#navLinks{
+  font-family: 'Raleway', sans-serif;
+}
+
+#copyright{
+  margin: 10em 0 0 0;
+}
+
+//first section
+#index{
+  background-image: image-url('1.JPG');
+}
+
+//donate button on index
+#donate{
+  margin-top: 90px;
+  font-size:25px;
+  border-radius: 50px;
+  font-family: 'Dancing Script', cursive;
+}
+
+#donate_section{
+  background-image: image-url('boe.JPG');
+}
+
+#grants{
+  background-image: image-url('gw.JPG');
+}
+
+#icons{
+  padding-top: 100px;
+}
+
+//sets background images for carousel slides
+#slide1{
+	background-image: image-url('2-1.JPG');
+}
+
+#slide2{
+	background-image: image-url('2-2.JPG');
+}
+
+#slide3{
+	background-image: image-url('2-3.JPG');
+}
+
+//donate logo
+#guideStar{
+	width: 50px;
+	height: 50px;
+}

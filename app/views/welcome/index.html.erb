@@ -1,0 +1,185 @@
+<!--fullpage css for carousel arrows-->
+<style>
+	/*adjusts arrow location*/
+	.fp-controlArrow.fp-prev {
+		left: 50px;
+	}
+
+	.fp-controlArrow.fp-next {
+		right: 50px;
+	}
+</style>
+
+<!--navbar-->
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container_fluid" id="navLinks">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+					<li>
+                		<a class="navbar-brand nav1">The Foundation</a>
+					</li>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav">
+                  	<li>
+                  		<a class="nav1">About</a>
+                  	</li>
+                  	<li>
+                    	<a id="nav2">Grants</a>
+                  	</li>
+                  	<li>
+                    	<a id="nav3">Leadership</a>
+                  	</li>
+                  	<li>
+                    	<a id="nav4">Donate Now</a>
+                  	</li>
+					<li>
+						<a href="/news">News</a>
+					</li>
+                </ul>
+            </div>
+        	</div>
+    	</nav>
+
+		<!--fullPage container and website body-->
+		<div id="fullpage">
+			<!--section 1-->
+			<div class="section" id="index">
+				<%@cover.each do |c|%>
+				<div class="container">
+					<div class="row">
+						<h1 class="text-center"><%=c.title%></h1>
+							<%=simple_format(c.content)%>
+					</div>
+				</div>
+				<%end%>
+				<div class="row text-center">
+					<button class="btn btn-default" id="donate">Donate Now</button>
+				</div>
+			</div>
+
+			<!--section 2-->
+			<div class="section" id="carousel">
+			  <div class="slide" id="slide1">
+			  	<div class="c_wrapper"><h1 class="text-center">Over $600000.00 in grants to Ridgewood Schools since 1989</h1></div>
+			  </div>
+			  <div class="slide" id="slide2">
+			  	<div class="c_wrapper"><h1 class="text-center">Top Supporters of the Chromebook Initiative</h1></div>
+			  </div>
+			  <div class="slide" id="slide3">
+			  	<div class="c_wrapper"><h1 class="text-center">Funding Ridgewood Education for Decades</h1></div>
+			  </div>
+			</div>
+
+			<!--section 3-->
+			<div class="section" id="grants">
+				<div class="row">
+					<%@grants.each do |g|%>
+						<div class="col-lg-6">
+							<div class="container">
+								<h3 class="text-center"><%=g.title%></h3><br>
+								<%=simple_format(g.content)%>
+							</div>
+						</div>
+					<%end%>
+				</div>
+				<br>
+			</div>
+
+			<!--section 4-->
+			<div class="section" id="leadership">
+				<div class="wrapper">
+					<h1 class="text-center">Leadership</h1>
+					<div class="row">
+						<p>The Trustees of The Foundation are civically engaged Ridgewood residents who are inspired by the vision of the original founders and generously volunteer their energy and talents to The Foundation.  Trustees serve two, three-year terms.</p>
+					</div>
+					<br>
+					<div class="row">
+						<%@leadership.each do |l|%>
+							<div class="col-lg-4">
+								<%=simple_format(l.content)%>
+							</div>
+						<%end%>
+					</div>
+				</div>
+			</div>
+
+			<!--section 5-->
+			<div class="section" id="donate_section">
+				<div class="container">
+					<%@donate.each do |d|%>
+						<div class="row text-center">
+							<h1><%=d.title%></h1>
+						</div>
+						<%=simple_format(d.content)%>
+					<%end%>
+					<div class="row">
+						<div class="col-lg-6">
+							<h3>Donate By Mail:</h3>
+							<p>Click <a href="attachments/donate.pdf" target="_blank">HERE</a> to download the donation form</p>
+							<p>Please mail donation forms to:</p>
+							<b>Ridgewood Education Foundation<br>49 Cottage Place<br>Ridgewood, New Jersey, 07450</b>
+						</div>
+						<div class="col-lg-6">
+							<h3>Donate Online:</h3>
+							<p>click <a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_flow&SESSION=V897sh_GnhbOWpKDBRz9Vq-CEdigUBaMuyVEXO4IfmYqQLCQhILKyrTAFZC&dispatch=5885d80a13c0db1f8e263663d3faee8d64ad11bbf4d2a5a1a0d303a50933f9b2" target="_blank">HERE</a> to access our Paypal page</p>
+						</div>
+					</div>
+					<footer class="text-center">
+						<p>All donations will receive a written acknowledgement for tax purposes</p>
+					</footer>
+				</div>
+			</div>
+
+			<!--section 6-->
+			<div class="section" id="contact">
+				<div class="wrapper">
+					<h1 class="text-center">Contact Us</h1>
+					<div class="row">
+						<div class="col-lg-6">
+							<h3 class="text-center">Mail Letters To:</h3>
+							<p style="padding-left: 150px">The Ridgewood Education Foundation<br> 49 Cottage Place<br> Ridgewood, New Jersey 07450</p>
+						</div>
+						<div class="col-lg-6">
+							<h3 class="text-center">Telephone:</h3>
+							<p class="text-center">201-670-2700, ext. 10562</p>
+						</div>
+					</div>
+					<br>
+					<br>
+					<div class="row" id="icons">
+						<!--imported font awesome icons-->
+						<div class="col-lg-4 text-center">
+							<a href="https://www.facebook.com/RidgewoodEdFoundation/?fref=ts" target="_blank"><i class="fa fa-facebook-square fa-4x"></i></a>
+						</div>
+						<div class="col-lg-4 text-center">
+							<a href="https://twitter.com/C21CL" target="_blank"><i class="fa fa-twitter-square fa-4x"></i></a>
+						</div>
+						<div class="col-lg-4 text-center">
+							<a href="mailto:refinfo@ridgewoodedfoundation.org" target="_blank"><i class="fa fa-envelope fa-4x"></i></a>
+						</div>
+					</div>
+					<footer id="copyright">
+						<div class="col-md-3 text-center">
+							<p class="text-center">&copy;2016 Ridgewood Education Foundation</p>
+						</div>
+						<div class="col-md-3 text-center">
+							<p>The Foundation is an IRC § 501(c)(3) non-profit corporation. All contributions are deductible to the extent allowed by law.</p>
+						</div>
+						<div class="col-md-3 text-center">
+							<p>refinfo@ridgewoodedfoundation.org</p>
+						</div>
+						<div class="col-md-3 text-center">
+							<%=image_tag "donate.jpg", id: "guideStar"%>
+						</div>
+					</footer>
+				</div>
+			</div>
+		</div>
+

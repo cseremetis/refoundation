@@ -1,0 +1,26 @@
+<%if logged_in?%>
+<%=render "shared/adminMenu"%>
+<div class="wrapper">
+	<div class="row text-center">
+		<h1 class="title">Update Profile</h1>
+	</div>
+	<%if flash[:notice]%>
+		<div class="alert alert-danger"><%=flash[:notice]%></div>
+	<%end%>
+	<%=form_for :user, url: user_path(@current_user), method: 'patch' do |f|%>
+		<%=render 'shared/errorMessages'%>
+		<%=f.label :name%><br>
+		<%=f.text_field :name, value: @current_user.name, class: 'form-control'%><br>
+		<%=f.label :email%>
+		<%=f.email_field :email, value: @current_user.email, class: 'form-control'%>
+		<%=f.label 'Old Password'%>
+		<%=f.password_field :old_password, class: 'form-control'%><br>
+		<%=f.label 'New Password'%>
+		<%=f.password_field :password, class: 'form-control'%>
+		<br>
+		<%=f.submit 'Update Information', class: 'btn btn-default'%>
+	<%end%>
+</div>
+<%else%>
+<%=render 'shared/login'%>
+<%end%>

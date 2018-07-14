@@ -1,0 +1,19 @@
+<%if @user && @user.errors.any?%>
+	<div id="error_explanation">
+		<div class="alert alert-danger">
+			<%@user.errors.full_messages.each do |m|%>
+				<li><%=m%></li>
+			<%end%>
+		</div>
+	</div>
+<%end%>
+
+<%if @caption && @caption.errors.any?%>
+	<div id="error_explanation">
+		<div class="alert alert-danger">
+			<%@caption.errors.full_messages.each do |m|%>
+				<li><%=m%></li>
+			<%end%>
+		</div>
+	</div>
+<%end%>

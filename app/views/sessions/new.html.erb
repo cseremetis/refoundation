@@ -1,0 +1,42 @@
+<%provide(:title, 'Wizard Portal')%>
+
+<!--if user is logged in, show admin home page-->
+<%if logged_in?%>
+	<%=render "shared/adminMenu"%>
+	<div class="wrapper">
+		<div class="row text-center">
+			<h1 class="title">Existing Captions:</h1>
+		</div>
+		<div class="row text-center">
+			<div class="col-lg-6">
+				<h2>Cover:</h2>
+				<%@cover.each do |c|%>
+					<h3><%=link_to c.title, edit_caption_path(c)%></h3>
+				<%end%>
+				<br>
+			</div>
+			<div class="col-lg-6">
+				<h2>Grants:</h2>
+				<%@grants.each do |g|%>
+					<h3><%=link_to g.title, edit_caption_path(g)%></h3>
+				<%end%>
+			</div>
+		</div>
+		<div class="row text-center">
+			<div class="col-lg-6">
+				<h2>Leadership:</h2>
+				<%@leadership.each do |l|%>
+					<h3><%=link_to l.title, edit_caption_path(l)%></h3>
+				<%end%>
+			</div>
+			<div class="col-lg-6">
+				<h2>Donate:</h2>
+				<%@donate.each do |d|%>
+					<h3><%=link_to d.title, edit_caption_path(d)%></h3>
+				<%end%>
+			</div>
+		</div>
+	</div>
+<%else%>
+	<%=render 'shared/login'%>
+<%end%>

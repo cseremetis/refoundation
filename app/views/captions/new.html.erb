@@ -1,0 +1,23 @@
+<!--file used to add new captions-->
+<%if logged_in?%>
+<div class="wrapper">
+	<%=render "shared/adminMenu"%>
+	<div class="row text-center">
+		<h1 class="title">Create New Caption</h1>
+	</div>
+	<div class="row">
+		<%=form_for :caption, url: captions_path do |f|%>
+			<%=render 'shared/errorMessages'%>
+			<%=f.label :section%><br>
+			<%=f.select :section, options_for_select([["cover", 1], ["grants", 2], ["leadership", 3], ["donate", 4], ["news", 5]])%><br>
+			<%=f.label :title%>
+			<%=f.text_field :title, class: 'form-control'%>
+			<%=f.label :content%>
+			<%=f.text_area :content, class: 'form-control'%><br>
+			<%=f.submit 'Create New Caption', class: 'btn btn-default'%>
+		<%end%>
+	</div>
+</div>
+<%else%>
+	<%=render 'shared/login'%>
+<%end%>
